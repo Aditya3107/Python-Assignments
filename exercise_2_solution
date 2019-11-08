@@ -1,0 +1,21 @@
+number = int(input("enter a number"))
+print("given number is " ,number)
+
+if number % 2 == 0 :
+    print("number is even")
+else :
+    print("number is odd")
+        
+    
+if number% 4 == 0 :
+    print(number, " is even and divisible by 4")
+
+print("okay on the other task")
+
+num = float(input("enter a number"))
+check = float(input("enter another number"))
+
+if num % check == 0:
+    print(num , " is divisible by " , check)
+else :
+    print(num, "is not divisible by ", check)
