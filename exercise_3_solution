@@ -1,0 +1,29 @@
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+new = []
+
+for i in a :
+    if (i <= 5) :
+        new.append(i)
+        print(new)
+
+print(new for new in a if new <=5 )
+
+fruits = ["banana", "orange", "pinapple", "banana"]
+
+print([object for object in fruits if object == "banana"])
+
+
+originallist = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+newlist = []
+number = int(input("give a number"))
+
+for digitslessthennumber in originallist :
+    if digitslessthennumber <= number :
+        newlist.append(digitslessthennumber)
+        print(newlist)
+  
+
+print(newlist for digitslessthennumber in originallist if digitslessthennumber >= number)
+
