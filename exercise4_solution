@@ -1,0 +1,15 @@
+#creating the list of the numbers in python
+
+
+    
+        
+
+number = int(input("givem me a number" ))
+
+listrange = list(range(1, number+1))
+
+divisorlist = []
+for i in listrange :
+    if number % i == 0:
+        divisorlist.append(i)
+print("your number can be devided by ",divisorlist)
