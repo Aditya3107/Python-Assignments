@@ -1,0 +1,15 @@
+
+word = input("write a word")
+
+print("A palindrome is a string that reads the same forwards and backwards.")
+
+word = word.casefold()
+
+reversedword = word[::-1]
+
+#reversedword = reversed(word)
+
+if word == reversedword:
+    print("word is plaindrome")
+else :
+    print("its not")
