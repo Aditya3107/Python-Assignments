@@ -189,8 +189,7 @@ def flip_player():
     return
         
 
-    
-    play_game()
+play_game()
     
     
     
