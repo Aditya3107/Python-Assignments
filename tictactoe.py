@@ -1,5 +1,5 @@
 #tic tac toe 
-
+#board
 
 
 ######global variable######
@@ -19,7 +19,10 @@ winner = None
 current_player = "X"
 
 
-
+def display_board():
+    print(board[0] + "|" + board[1] + "|" + board[2])
+    print(board[3] + "|" + board[4] + "|" + board[5])
+    print(board[6] + "|" + board[7] + "|" + board[8])
     
 #play game
 
@@ -37,72 +40,63 @@ def play_game():
         flip_player()
     
     #game is ended 
-    if winner == "X" or winner == "0":
+    if winner == "X" or winner == "O":
         print(winner +"won.")
     elif winner == None:
         print("its a tie")
     
-    # Display the game board to the screen
-def display_board():
-
-  print("\n")
-  print(board[0] + " | " + board[1] + " | " + board[2] + "     1 | 2 | 3")
-  print(board[3] + " | " + board[4] + " | " + board[5] + "     4 | 5 | 6")
-  print(board[6] + " | " + board[7] + " | " + board[8] + "     7 | 8 | 9")
-  print("\n")
-
-
+    
+    
 #handle a single turn of a arbitary player  
 def handle_turn(player):
-
     
     
-  print(player + "'s turn")
+    print(player + "'s turn")
     
-  position = input("choose a number between 1 to 9")
+    position = input("choose a number between 1 to 9")
     
-  valid = False
-  while not valid :
+    valid = False
+    while not valid :
     
-    while position not in ["1","2","3","4","5","6","7","8","9"]:
-      position = input("invalid, choose from 1 to 9")
-      position = int(position)- 1
+        while position not in ["1","2","3","4","5","6","7","8","9"]:
+            position = input("invalid, choose from 1 to 9")
+        position = int(position)- 1
         
-      if board[position] == "-":
-        valid = True
-        print("already taken place choose different")
+        if board[position] == "-":
+            valid = True
+            print("already taken place choose different")
         
-  board[position] = player
-  display_board()
+    board[position] = player
+    display_board()
     
 def check_if_game_over():
-  check_if_win()
-  check_if_tie()
+    check_if_win()
+    check_if_tie()
  
 def check_if_win():
     
-  #setup a global variable
-  global winner
-  #check rows
-  row_winner = check_rows()
+    #setup a global variable
+    global winner
+    #check rows
+    row_winner = check_rows()
     
-  #check columns
-  column_winner = check_columns()
+    #check columns
+    column_winner = check_columns()
     
-  #diagonals
+    #diagonals
     
-  diagonal_winner = check_diagonals()
+    diagonal_winner = check_diagonals()
     
-  if row_winner:
-    winner = row_winner
-  elif column_winner:
-    winner = column_winner
-  elif diagonal_winner:
-    winner = diagonal_winner
+    if row_winner:
+        winner = row_winner
+    elif column_winner:
+        winner = column_winner
+    elif diagonal_winner:
+        winner = diagonal_winner
     
-  else :
-    winner = None
-  return
+    else :
+        winner = None
+    return
 
 def check_rows():
     
@@ -189,8 +183,7 @@ def flip_player():
     return
         
 
+    
 play_game()
     
-    
-    
-    
+
